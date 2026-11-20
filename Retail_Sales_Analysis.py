@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-df = pd.read_csv('retail_orders.csv')
+BASE_DIR = Path(__file__).resolve().parent
+df = pd.read_csv(BASE_DIR / 'retail_sales_orders.csv')
 
 
 
@@ -102,5 +104,5 @@ print(df['Product_Category'].unique())
 
 
 
-df.to_excel('retail_orders_cleaned.xlsx',index=False)
-df.to_csv('retail_orders_cleaned.csv',index=False)
+df.to_excel(BASE_DIR / 'retail_sales_orders_cleaned.xlsx', index=False)
+df.to_csv(BASE_DIR / 'retail_sales_orders_cleaned.csv', index=False)
